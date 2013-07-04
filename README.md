@@ -7,10 +7,19 @@ The spec has some useful terminology. Objects have *pairs* and Arrays have *elem
 ## Idiomatic Style Guide
 
 1. <a name="key-names">Key Names</a>
-    - Use either lowerCamelCase or snake_case
-    - Don't mix lowerCamelCase and snake_case in the same document
+    - Know the different word separation styles. Common ones include lowerCamelCase,
+      snake_case, dash-case, and UpperCamelCase.
+    - lowerCamelCase is a good choice, since it's the default in JavaScript, and other popular 
+      client-side languages, like Android and Objective C. It's better to have
+      server-side developers handle differences in word separation styles than to
+      leave that job up to client-side developers.
+    - Don't mix different word separation styles in the same document. If you are working on an
+      existing application and want to change the word separation style, change it quickly or
+      not at all.
+    - If you need to use json keys in urls and xml tags and attribute names, find a library that
+      converts from lowerCamelCase to dash-case, and from dash-case to lowerCamelCase. If you do
+      this a lot, consider using dash-case.
     - Use the same id key across an application (`id` and `_id` are popular choices for key names)
-    - Avoid using really long key names. Any string can be a key in JSON, but
 
 2. <a name="types">Extra Types</a>
     - JSON comes with a few simple types. Often applications need other types, like dates and
@@ -43,3 +52,7 @@ The spec has some useful terminology. Objects have *pairs* and Arrays have *elem
     - A complex type is something like a location (latitude and longitude) or a link (text and url)
       that might take up two pairs in an object.
 
+# Tools
+
+* [JSON validator](http://zaach.github.io/jsonlint/)
+* [JSON Schema](http://json-schema.org/)
